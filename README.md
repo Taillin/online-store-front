@@ -10,7 +10,7 @@
 - **Project Title:** IAIDevelopment
 - **Topic:** Online Shop: clothes, gadgets, cosmetics
 - **Group Member Names:** Yermakov Ilya, Khametov Ilyas, Askar Azamat
-- **Published Website Link (Live Demo):** [Insert your GitHub Pages or Netlify link here]
+- **Published Website Link:** https://taillin.github.io/final-project-front/
 ---
 
 ## 2. Short Description of the Project
