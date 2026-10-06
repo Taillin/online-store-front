@@ -1,24 +1,18 @@
-/* ==========================================================================
-   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
-   ========================================================================== */
 :root {
-    /* Цветовая палитра проекта */
-    --color-primary: #6b1d2f;        /* Благородный бургунди */
-    --color-primary-dark: #4f1422;   /* Темный бургунди для hover-состояний */
-    --color-accent: #c59b27;         /* Песочно-золотой акцент */
-    --color-bg-light: #fbf9f6;       /* Мягкий светлый/кремовый фон */
-    --color-text-dark: #2c2929;      /* Глубокий темно-серый цвет для чтения */
-    --color-text-muted: #6c757d;     /* Приглушенный серый текст */
-    --color-border: #e9e4dc;         /* Цвет рамок и разделителей */
-    --color-white: #ffffff;          /* Чистый белый цвет */
+    --color-primary: #6b1d2f;
+    --color-primary-dark: #4f1422;
+    --color-accent: #c59b27;
+    --color-bg-light: #fbf9f6;
+    --color-text-dark: #2c2929;
+    --color-text-muted: #6c757d;
+    --color-border: #e9e4dc;         
+    --color-white: #ffffff;          
 
-    /* Типографика и геометрия */
     --font-main: 'Inter', sans-serif;
     --border-radius: 8px;
     --transition-speed: 0.25s;
 }
 
-/* Сброс и базовые стили документа */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -32,7 +26,6 @@ body {
     padding: 0;
 }
 
-/* Заголовки */
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-dark);
     font-weight: 700;
@@ -48,9 +41,6 @@ a:hover, a:focus {
     color: var(--color-primary-dark);
 }
 
-/* ==========================================================================
-   2. ШАПКА И НАВИГАЦИЯ (FLEXBOX)
-   ========================================================================== */
 .site-header {
     background-color: var(--color-white);
     border-bottom: 2px solid var(--color-border);
@@ -59,7 +49,6 @@ a:hover, a:focus {
     z-index: 1000;
 }
 
-/* Flex-контейнер для логотипа и меню */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -83,7 +72,6 @@ a:hover, a:focus {
     color: var(--color-primary);
 }
 
-/* Flex-меню навигации */
 .nav-list {
     display: flex;
     list-style: none;
@@ -113,9 +101,6 @@ a:hover, a:focus {
     background-color: var(--color-primary);
 }
 
-/* ==========================================================================
-   3. КНОПКИ (BUTTONS)
-   ========================================================================== */
 .btn-burgundy {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -155,9 +140,6 @@ a:hover, a:focus {
     box-shadow: 0 4px 10px rgba(107, 29, 47, 0.2);
 }
 
-/* ==========================================================================
-   4. СЕКЦИИ И ТИПОГРАФИКА
-   ========================================================================== */
 .hero-section {
     background: linear-gradient(135deg, rgba(107, 29, 47, 0.08) 0%, rgba(197, 155, 39, 0.08) 100%);
     padding: 5rem 1rem;
@@ -210,11 +192,8 @@ a:hover, a:focus {
     margin-top: 0.5rem;
 }
 
-/* ==========================================================================
-   5. КАРТОЧКА ТОВАРА И ПОЗИЦИОНИРОВАНИЕ (RELATIVE / ABSOLUTE)
-   ========================================================================== */
 .product-card {
-    position: relative; /* Для абсолютного позиционирования бейджа */
+    position: relative;
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
@@ -230,7 +209,6 @@ a:hover, a:focus {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Бейджики: абсолютное позиционирование */
 .product-badge {
     position: absolute;
     top: 15px;
@@ -314,9 +292,6 @@ a:hover, a:focus {
     color: var(--color-primary);
 }
 
-/* ==========================================================================
-   6. СЕТКА КАТАЛОГА (CSS GRID)
-   ========================================================================== */
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -349,9 +324,6 @@ a:hover, a:focus {
     border-color: var(--color-primary);
 }
 
-/* ==========================================================================
-   7. ТАБЛИЦА СРАВНЕНИЯ (:NTH-CHILD)
-   ========================================================================== */
 .compare-table-wrapper {
     background-color: var(--color-white);
     border-radius: var(--border-radius);
@@ -385,7 +357,6 @@ a:hover, a:focus {
     background-color: var(--color-primary-dark);
 }
 
-/* Эффект чередования строк (:nth-child) */
 .compare-table tbody tr:nth-child(even) {
     background-color: rgba(107, 29, 47, 0.03);
 }
@@ -400,9 +371,6 @@ a:hover, a:focus {
     background-color: var(--color-bg-light);
 }
 
-/* ==========================================================================
-   8. ФОРМА ОБРАТНОЙ СВЯЗИ (:FOCUS)
-   ========================================================================== */
 .contact-card {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
@@ -425,7 +393,6 @@ a:hover, a:focus {
     transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-/* Стилизация :focus для полей формы */
 .form-control:focus, 
 .form-select:focus {
     border-color: var(--color-primary);
@@ -433,9 +400,6 @@ a:hover, a:focus {
     outline: none;
 }
 
-/* ==========================================================================
-   9. БЛОКИ ПРЕИМУЩЕСТВ И «О НАС»
-   ========================================================================== */
 .feature-box, .about-card {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
@@ -465,7 +429,6 @@ a:hover, a:focus {
     margin-bottom: 0;
 }
 
-/* Статистика на странице «О нас» */
 .stat-box {
     text-align: center;
     padding: 1.5rem;
@@ -486,9 +449,6 @@ a:hover, a:focus {
     color: var(--color-text-muted);
 }
 
-/* ==========================================================================
-   10. ПОДВАЛ (FOOTER)
-   ========================================================================== */
 .site-footer {
     background-color: #201e1e;
     color: #e5e5e5;
@@ -548,11 +508,6 @@ a:hover, a:focus {
     font-size: 0.85rem;
 }
 
-/* ==========================================================================
-   11. КАСТОМНЫЕ МЕДИА-ЗАПРОСЫ (@MEDIA BREAKPOINTS)
-   ========================================================================== */
-
-/* Брейкпоинт 1: Планшеты (экраны до 768px) */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -584,7 +539,6 @@ a:hover, a:focus {
     }
 }
 
-/* Брейкпоинт 2: Смартфоны (экраны до 576px) */
 @media (max-width: 576px) {
     .section-title {
         font-size: 1.6rem;
