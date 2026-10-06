@@ -1,0 +1,606 @@
+/* ==========================================================================
+   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================================== */
+:root {
+    /* Цветовая палитра проекта */
+    --color-primary: #6b1d2f;        /* Благородный бургунди */
+    --color-primary-dark: #4f1422;   /* Темный бургунди для hover-состояний */
+    --color-accent: #c59b27;         /* Песочно-золотой акцент */
+    --color-bg-light: #fbf9f6;       /* Мягкий светлый/кремовый фон */
+    --color-text-dark: #2c2929;      /* Глубокий темно-серый цвет для чтения */
+    --color-text-muted: #6c757d;     /* Приглушенный серый текст */
+    --color-border: #e9e4dc;         /* Цвет рамок и разделителей */
+    --color-white: #ffffff;          /* Чистый белый цвет */
+
+    /* Типографика и геометрия */
+    --font-main: 'Inter', sans-serif;
+    --border-radius: 8px;
+    --transition-speed: 0.25s;
+}
+
+/* Сброс и базовые стили документа */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover, a:focus {
+    color: var(--color-primary-dark);
+}
+
+/* ==========================================================================
+   2. ШАПКА И НАВИГАЦИЯ (FLEXBOX)
+   ========================================================================== */
+.site-header {
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Flex-контейнер для логотипа и меню */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    letter-spacing: 0.5px;
+}
+
+.logo:hover {
+    color: var(--color-text-dark);
+}
+
+.logo-accent {
+    color: var(--color-primary);
+}
+
+/* Flex-меню навигации */
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-link:hover, 
+.nav-link:focus {
+    color: var(--color-primary);
+    background-color: rgba(107, 29, 47, 0.08);
+}
+
+.nav-link.active {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   3. КНОПКИ (BUTTONS)
+   ========================================================================== */
+.btn-burgundy {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-burgundy:hover, 
+.btn-burgundy:focus {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(107, 29, 47, 0.25);
+}
+
+.btn-outline-burgundy {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-outline-burgundy:hover, 
+.btn-outline-burgundy:focus {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(107, 29, 47, 0.2);
+}
+
+/* ==========================================================================
+   4. СЕКЦИИ И ТИПОГРАФИКА
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(107, 29, 47, 0.08) 0%, rgba(197, 155, 39, 0.08) 100%);
+    padding: 5rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary-dark);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   5. КАРТОЧКА ТОВАРА И ПОЗИЦИОНИРОВАНИЕ (RELATIVE / ABSOLUTE)
+   ========================================================================== */
+.product-card {
+    position: relative; /* Для абсолютного позиционирования бейджа */
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Бейджики: абсолютное позиционирование */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge-hit {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.badge-sale {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.product-image-wrap {
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.product-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--color-border);
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   6. СЕТКА КАТАЛОГА (CSS GRID)
+   ========================================================================== */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+
+.filter-badge-list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.filter-badge:hover, 
+.filter-badge.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   7. ТАБЛИЦА СРАВНЕНИЯ (:NTH-CHILD)
+   ========================================================================== */
+.compare-table-wrapper {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.compare-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.compare-table th, 
+.compare-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border: 1px solid var(--color-border);
+}
+
+.compare-table thead th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    text-align: center;
+}
+
+.compare-table thead th:first-child {
+    text-align: left;
+    background-color: var(--color-primary-dark);
+}
+
+/* Эффект чередования строк (:nth-child) */
+.compare-table tbody tr:nth-child(even) {
+    background-color: rgba(107, 29, 47, 0.03);
+}
+
+.compare-table tbody tr:hover {
+    background-color: rgba(197, 155, 39, 0.08);
+}
+
+.param-title {
+    font-weight: 600;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+}
+
+/* ==========================================================================
+   8. ФОРМА ОБРАТНОЙ СВЯЗИ (:FOCUS)
+   ========================================================================== */
+.contact-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Стилизация :focus для полей формы */
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(107, 29, 47, 0.2);
+    outline: none;
+}
+
+/* ==========================================================================
+   9. БЛОКИ ПРЕИМУЩЕСТВ И «О НАС»
+   ========================================================================== */
+.feature-box, .about-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: transform var(--transition-speed) ease;
+}
+
+.feature-box:hover, .about-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-text {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 0;
+}
+
+/* Статистика на странице «О нас» */
+.stat-box {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+}
+
+.stat-text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   10. ПОДВАЛ (FOOTER)
+   ========================================================================== */
+.site-footer {
+    background-color: #201e1e;
+    color: #e5e5e5;
+    margin-top: 4rem;
+}
+
+.footer-brand {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.footer-desc {
+    color: #a8a8a8;
+    font-size: 0.9rem;
+}
+
+.footer-contact {
+    color: #cccccc;
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+}
+
+.footer-title {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #a8a8a8;
+    font-size: 0.9rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-links a:hover, 
+.footer-links a:focus {
+    color: var(--color-accent);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333333;
+    color: #888888;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   11. КАСТОМНЫЕ МЕДИА-ЗАПРОСЫ (@MEDIA BREAKPOINTS)
+   ========================================================================== */
+
+/* Брейкпоинт 1: Планшеты (экраны до 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Брейкпоинт 2: Смартфоны (экраны до 576px) */
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .btn-burgundy, .btn-outline-burgundy {
+        width: 100%;
+        text-align: center;
+    }
+}
