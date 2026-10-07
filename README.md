@@ -1,4 +1,4 @@
-# IAIDEvelopment — Online Gadget & Hardware Store (Kazakhstan)
+# IAIDEvelopment — Online Gadget & Hardware Store
 
 **Course:** Front-End Web Development (Midterm Project)  
 **Project Topic:** Multi-page responsive online gadget and computer hardware store.
@@ -17,7 +17,7 @@
 
 IAIDev is a multi-page responsive web store developed from scratch using semantic HTML5, custom CSS3, and the Bootstrap 5 grid system.
 
-The project is designed for students, software developers, and tech enthusiasts in Kazakhstan. Both the product catalog and comparison table feature real-world hardware models:
+The project is designed for students, common people, designers and so on. The product have catalog and comparison table feature real-world hardware models:
 - Laptops: ASUS Vivobook S14, ASUS Zenbook 14 OLED
 - Graphics Card: NVIDIA GeForce RTX 4060 8GB
 - Processor: AMD Ryzen 5 5600
@@ -30,23 +30,23 @@ The project is designed for students, software developers, and tech enthusiasts 
 ## 3. Features Implemented
 
 ### Multi-page Structure (5 Connected Pages):
-1. **`index.html` (Home Page):** Features a hero section, popular featured gadgets, store advantages, and footer navigation.
+1. **`index.html` (Home Page):** Features a hero section, popular featured gadgets, store, and footer navigation.
 2. **`catalog.html` (Catalog):** Displays all real hardware devices using CSS Grid, category filter buttons, and navigation links to the comparison table.
-3. **`compare.html` (Comparison):** Contains an HTML specification table comparing 4 devices, formatted with alternating row background colors.
-4. **`about.html` (About Us):** Presents project background, key numbers/statistics, development stack, and quality standards for the Kazakhstan market.
-5. **`contact.html` (Contact Us):** An interactive feedback form with inputs, select dropdowns, text area, and regional branch addresses.
+3. **`compare.html` (Comparison):** Contains an HTML specification table comparing 4 devices.
+4. **`about.html` (About Us):** Presents project background, development stack and quality standards for the Kazakhstan market.
+5. **`contact.html` (Contact Us):** An interactive feedback form with inputs, text area and regional branch addresses.
 
 ### Core Technical Requirements:
 - **Semantic HTML5:** Built using `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` elements across all pages.
 - **Single External Stylesheet:** All styles are defined in `css/style.css` without inline or internal styling.
-- **CSS Variables (`:root`):** Configured with a custom Burgundy palette (`--color-primary: #6b1d2f`), gold accent (`--color-accent: #c59b27`), light cream background (`--color-bg-light: #fbf9f6`), and typography variables.
+- **CSS Variables (`:root`):** Configured with a custom color (`--color-primary: #6b1d2f`), gold accent (`--color-accent: #c59b27`), light cream background (`--color-bg-light: #fbf9f6`), and typography variables.
 - **Flexbox and CSS Grid Demonstration:**
   - Header navigation menu uses **Flexbox** (`display: flex; justify-content: space-between`).
   - Catalog product layout uses **CSS Grid** (`display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))`).
 - **Positioning Technique:** Product badges ("HIT" and "SALE") use `position: absolute` placed inside a parent card with `position: relative`.
 - **Interactive Pseudo-classes (`:hover` and `:focus`):**
   - Buttons and cards have smooth hover transformations and shadow elevations.
-  - Form input elements highlight with a subtle burgundy border and shadow on `:focus`.
+  - Form input elements highlight with a subtle border and shadow on `:focus`.
 - **Alternating Table Rows:** The `:nth-child(even)` pseudo-class provides a zebra-stripe effect on the comparison table in `compare.html`.
 - **Image Optimization:** All below-the-fold product photos include the `loading="lazy"` attribute.
 - **Responsive Web Design:**
