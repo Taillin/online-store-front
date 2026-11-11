@@ -55,12 +55,6 @@ HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1, localStorage, Git and Gi
   - Standard Bootstrap 12-column grid (`container`, `row`, `col-*`).
   - Two custom `@media` query breakpoints (768px for tablets and 576px for mobile phones) to adjust header alignment, typography sizing, and card layout.
 
-## Run locally
-
-Open `index.html` in a browser. Internet access is needed for the jQuery and Bootstrap CDNs, Google Fonts and the existing Unsplash images.
-
-For consistent localStorage behavior, serve the project with a local HTTP server such as VS Code Live Server. No installation or build step is required for the website.
-
 ## Try the features
 
 1. Open Catalog, type `asus`, then choose Laptops or Processors. Search and category are applied together. Choose All and clear the query to restore all products.
@@ -74,13 +68,7 @@ The forms demonstrate client-side validation only: they do not create accounts o
 
 | Member | Midterm contribution | Endterm contribution |
 | --- | --- | --- |
-| Yermakov Ilya | Home and catalog HTML, catalog grid and CSS variables | [Add completed tasks] |
-| Khametov Ilyas | Comparison, contacts and about pages | [Add completed tasks] |
-| Askar Azamat | Table and form styling, grid and responsive media queries | [Add completed tasks] |
-| [Additional member, if applicable] | [Contribution] | [Add completed tasks] |
+| Yermakov Ilya | Home and catalog HTML, catalog grid and CSS variables |  Implemented real-time product search and category filters using jQuery and the image gallery with lightbox navigation and jQuery fade-in and fade-out effects. |
+| Khametov Ilyas | Comparison, contacts and about pages | Implemented registration form validation, email verification using RegEx, the password strength indicator and password confirmation. |
+| Askar Azamat | Table and form styling, grid and responsive media queries | Implemented the dynamic product table with CRUD operations and localStorage |
 
-## Deployment
-
-**Published Endterm website:** [INSERT DEPLOYMENT URL]
-
-Update the existing repository and publish its root folder using GitHub Pages or Netlify. Replace the placeholder with the verified published URL before submission.
