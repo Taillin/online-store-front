@@ -36,14 +36,21 @@
                 <p class="section-subtitle">Оригинальная электроника с официальной гарантией и доставкой по всему Казахстану</p>
             </div>
 
-            <div class="filter-badge-list justify-content-center">
-                <span class="filter-badge active">Все гаджеты</span>
-                <span class="filter-badge">Ноутбуки</span>
-                <span class="filter-badge">Видеокарты</span>
-                <span class="filter-badge">Процессоры</span>
-                <span class="filter-badge">Охлаждение</span>
-                <span class="filter-badge">Память и SSD</span>
+            <div class="mb-3">
+                <label for="catalogSearch" class="form-label">Поиск товаров</label>
+                <input id="catalogSearch" type="search" class="form-control" placeholder="Название или характеристика товара">
             </div>
+            <div class="filter-badge-list justify-content-center" aria-label="Категории товаров">
+                <button type="button" class="filter-badge active" data-category="all" aria-pressed="true">Все (All)</button>
+                <button type="button" class="filter-badge" data-category="Ноутбуки" aria-pressed="false">Ноутбуки</button>
+                <button type="button" class="filter-badge" data-category="Видеокарты" aria-pressed="false">Видеокарты</button>
+                <button type="button" class="filter-badge" data-category="Процессоры" aria-pressed="false">Процессоры</button>
+                <button type="button" class="filter-badge" data-category="Охлаждение" aria-pressed="false">Охлаждение</button>
+                <button type="button" class="filter-badge" data-category="Память и SSD" aria-pressed="false">Память и SSD</button>
+                <button type="button" class="filter-badge" data-category="Питание" aria-pressed="false">Питание</button>
+            </div>
+            <p id="searchStatus" class="text-muted" role="status"></p>
+            <p id="noResults" class="alert alert-light d-none">Ничего не найдено. Измените запрос или категорию.</p>
 
             <div class="catalog-grid">
                 
@@ -241,10 +248,13 @@
                 </div>
             </div>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">© 2026 IAIDev Казахстан. Midterm Project по веб-разработке. Все права защищены.</p>
+                <p class="mb-0">© 2026 IAIDev Казахстан. Endterm Project по веб-разработке. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

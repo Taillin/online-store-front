@@ -190,6 +190,48 @@
                     </div>
                 </div>
             </div>
+
+            <section class="mt-5" aria-labelledby="productsTitle">
+                <h2 id="productsTitle" class="h3 mb-3">Мой список товаров</h2>
+                <p class="text-muted">Составьте собственный список для покупки. Он сохраняется в этом браузере; цены каталога не меняются.</p>
+                <form id="productForm" class="contact-card mb-4" novalidate>
+                    <h3 id="productFormTitle" class="h5 mb-3">Добавить товар</h3>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-5">
+                            <label for="productName" class="form-label">Название *</label>
+                            <input id="productName" class="form-control" maxlength="100" required>
+                            <div class="invalid-feedback">Введите название товара (до 100 символов).</div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="productCategory" class="form-label">Категория *</label>
+                            <select id="productCategory" class="form-select" required>
+                                <option value="">Выберите категорию</option>
+                                <option>Ноутбуки</option><option>Видеокарты</option><option>Процессоры</option>
+                                <option>Охлаждение</option><option>Память и SSD</option><option>Питание</option>
+                            </select>
+                            <div class="invalid-feedback">Выберите категорию.</div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="productPrice" class="form-label">Цена, ₸ *</label>
+                            <input id="productPrice" class="form-control" type="number" min="1" max="999999999" step="1" required>
+                            <div class="invalid-feedback">Введите целое число от 1 до 999999999.</div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap gap-2">
+                            <button id="saveProduct" class="btn btn-burgundy" type="submit">Добавить</button>
+                            <button id="cancelEdit" class="btn btn-outline-burgundy d-none" type="button">Отменить редактирование</button>
+                        </div>
+                    </div>
+                </form>
+                <p id="productStatus" role="status"></p>
+                <p id="storageStatus" class="text-warning" role="status"></p>
+                <div class="compare-table-wrapper">
+                    <table class="compare-table">
+                        <caption class="px-3">Товары в личном списке</caption>
+                        <thead><tr><th scope="col">Название</th><th scope="col">Категория</th><th scope="col">Цена, ₸</th><th scope="col">Действия</th></tr></thead>
+                        <tbody id="productRows"></tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -226,10 +268,13 @@
                 </div>
             </div>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">© 2026 IAIDev Казахстан. Midterm Project по веб-разработке. Все права защищены.</p>
+                <p class="mb-0">© 2026 IAIDev Казахстан. Endterm Project по веб-разработке. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
