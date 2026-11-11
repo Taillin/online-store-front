@@ -1,21 +1,21 @@
 # IAIDEvelopment — Online Gadget & Hardware Store
 
-**Course:** Front-End Web Development (Midterm Project)  
-**Project Topic:** Multi-page responsive online gadget and computer hardware store.
+**Course:** Front-End Web Development — Endterm Project
+**Topic:** A responsive gadget and computer hardware store for Kazakhstan.
 
----
+## Description
 
-## 1. Project and Student Information
+This endterm extends the existing midterm website with JavaScript and jQuery. The original five pages, burgundy design, CSS Grid catalog, Bootstrap grid and responsive styles are preserved.
 
-- **Project Title:** IAIDevelopment
-- **Topic:** Online Shop: clothes, gadgets, cosmetics
-- **Group Member Names:** Yermakov Ilya, Khametov Ilyas, Askar Azamat
-- **Published Website Link:** https://taillin.github.io/final-project-front/
----
+## Pages and features
 
-## 2. Short Description of the Project
+- `index.html`: home page, featured products and store advantages.
+- `catalog.html`: instant case-insensitive search by product text, category buttons working together with search, result count and empty state.
+- `compare.html`: original specification comparison plus a personal product list with full CRUD. Add products, edit or cancel changes, and confirm deletion. Rows are rendered from an array and saved in localStorage.
+- `contact.html`: original feedback form with required-field and email validation, plus a registration form. Registration checks name, email with RegEx, password length and confirmation. The weak / medium / strong indicator updates while typing. Bootstrap validation classes and text show errors and success.
+- `about.html`: Bootstrap image gallery with an enlarged modal view, previous/next buttons, arrow keys, Escape to close, and jQuery fadeOut/fadeIn transitions.
 
-IAIDev is a multi-page responsive web store developed from scratch using semantic HTML5, custom CSS3, and the Bootstrap 5 grid system.
+All JavaScript is in `js/script.js`. The project uses simple functions, loops and jQuery selectors, without a build system or code comments.
 
 The project is designed for students, common people, designers and so on. The product have catalog and comparison table feature real-world hardware models:
 - Laptops: ASUS Vivobook S14, ASUS Zenbook 14 OLED
@@ -25,9 +25,11 @@ The project is designed for students, common people, designers and so on. The pr
 - RAM: Kingston Fury Beast DDR4 16GB
 - Storage & Power: Kingston KC3000 1TB NVMe, Deepcool PK650D 650W
 
----
+## Technologies
 
-## 3. Features Implemented
+HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1, localStorage, Git and GitHub.
+
+## Layout and responsiveness
 
 ### Multi-page Structure (5 Connected Pages):
 1. **`index.html` (Home Page):** Features a hero section, popular featured gadgets, store, and footer navigation.
@@ -53,18 +55,32 @@ The project is designed for students, common people, designers and so on. The pr
   - Standard Bootstrap 12-column grid (`container`, `row`, `col-*`).
   - Two custom `@media` query breakpoints (768px for tablets and 576px for mobile phones) to adjust header alignment, typography sizing, and card layout.
 
----
+## Run locally
 
-## 4. Technologies Used
+Open `index.html` in a browser. Internet access is needed for the jQuery and Bootstrap CDNs, Google Fonts and the existing Unsplash images.
 
-- **HTML5:** Semantic elements, forms, tables, links, lists.
-- **CSS3:** Custom properties (`:root`), Flexbox, CSS Grid, absolute/relative positioning, pseudo-classes, media queries.
-- **Bootstrap 5.3 (CSS):** Grid containers, rows, responsive columns, and spacing utility classes.
-- **Git & GitHub:** Version control and hosting via GitHub Pages.
+For consistent localStorage behavior, serve the project with a local HTTP server such as VS Code Live Server. No installation or build step is required for the website.
 
----
+## Try the features
 
-## 5. Individual Contribution of Each Group Member
-- **Member 1 (Yermakov Ilya):** HTML structure for `index.html` and `catalog.html`. layout styling with CSS Grid, and `:root` variables in `css/style.css`.
-- **Member 2 (Khametov Ilyas):** HTML structure for `compare.html`, `contact.html`, and `about.html`.
-- **Member 3 (Azamat Askar):** Table styling with `:nth-child(even)`, form focus styling, and responsive media queries. Layout styling with CSS Grid, and `:root` variables in `css/style.css`
+1. Open Catalog, type `asus`, then choose Laptops or Processors. Search and category are applied together. Choose All and clear the query to restore all products.
+2. Open Contacts and submit empty forms. Try an invalid email and different passwords. Passwords need at least 8 characters without whitespace; medium adds letters and numbers, and strong needs at least 12 characters, lowercase and uppercase letters, a number and a symbol.
+3. Open Comparison, add a product, edit it, cancel an edit, and delete it with confirmation. Reload to check that the list is saved.
+4. Open About, select a gallery image, use the navigation buttons or arrow keys, and close with Escape.
+
+The forms demonstrate client-side validation only: they do not create accounts or send messages. Passwords are not stored. The personal product list is separate from the static catalog and comparison specifications. If browser storage is unavailable, changes remain in memory until reload.
+
+## Group members and contributions
+
+| Member | Midterm contribution | Endterm contribution |
+| --- | --- | --- |
+| Yermakov Ilya | Home and catalog HTML, catalog grid and CSS variables | [Add completed tasks] |
+| Khametov Ilyas | Comparison, contacts and about pages | [Add completed tasks] |
+| Askar Azamat | Table and form styling, grid and responsive media queries | [Add completed tasks] |
+| [Additional member, if applicable] | [Contribution] | [Add completed tasks] |
+
+## Deployment
+
+**Published Endterm website:** [INSERT DEPLOYMENT URL]
+
+Update the existing repository and publish its root folder using GitHub Pages or Netlify. Replace the placeholder with the verified published URL before submission.
