@@ -34,4 +34,4 @@ Then open [localhost:8000](http://localhost:8000). The API needs internet access
 
 Bootstrap 5.3.3 and jQuery 3.7.1 are included in `vendor` with their licenses. Photos are from [Unsplash](https://unsplash.com); online products are from [DummyJSON](https://dummyjson.com/docs/products).
 
-OpenAI ChatGPT / Codex helped with code, testing, translation and project materials.
+OpenAI ChatGPT / Codex helped with code, testing and project materials.
