@@ -1,9 +1,9 @@
 # IAIDev
 
-A student website for browsing and comparing laptops and PC parts.
+Website for browsing and comparing laptops and PC parts.
 Built with HTML, CSS, Bootstrap, JavaScript and jQuery.
 
-[Live website](https://taillin.github.io/online-store-front/) | [GitHub](https://github.com/Taillin/online-store-front)
+website(https://taillin.github.io/online-store-front/) ,GitHub (https://github.com/Taillin/online-store-front)
 
 ## Team
 
