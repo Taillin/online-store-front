@@ -30,7 +30,7 @@ $(function () {
             label = 'strong';
             color = 'text-success';
         }
-        $('#passwordStrength').removeClass('text-danger text-warning text-success').addClass(password ? color : '').text('Надёжность: ' + (password ? label : '—'));
+        $('#passwordStrength').removeClass('text-danger text-warning text-success').addClass(password ? color : '').text('Strength: ' + (password ? label : '—'));
     }
 
     $('#registrationForm input').on('input', function () {
@@ -49,7 +49,7 @@ $(function () {
             if (!checkRegistrationField(this.id)) valid = false;
         });
         showStrength();
-        $('#registrationStatus').toggleClass('text-success', valid).toggleClass('text-danger', !valid).text(valid ? 'Данные корректны! Проверка регистрации пройдена. Аккаунт не создаётся.' : 'Исправьте выделенные поля.');
+        $('#registrationStatus').toggleClass('text-success', valid).toggleClass('text-danger', !valid).text(valid ? 'The form is valid. This demo does not create an account.' : 'Please fix the highlighted fields.');
         if (!valid) $('#registrationForm .is-invalid').first().trigger('focus');
     });
 
@@ -70,7 +70,7 @@ $(function () {
         $('#contactForm [required]').each(function () {
             if (!checkContactField(this.id)) valid = false;
         });
-        $('#contactStatus').toggleClass('text-success', valid).toggleClass('text-danger', !valid).text(valid ? 'Форма заполнена верно. В учебной версии сообщение не отправляется.' : 'Заполните обязательные поля и подтвердите согласие.');
+        $('#contactStatus').toggleClass('text-success', valid).toggleClass('text-danger', !valid).text(valid ? 'The form is valid. This demo does not send messages.' : 'Fill in the required fields and tick the box.');
         if (!valid) $('#contactForm .is-invalid').first().trigger('focus');
     });
 
@@ -81,13 +81,13 @@ $(function () {
         var count = 0;
         $('.catalog-grid .product-card').each(function () {
             var category = $(this).find('.product-category').text().trim();
-            if (category === 'Оперативная память' || category === 'Накопители') category = 'Память и SSD';
+            if (category === 'Memory' || category === 'Storage') category = 'Memory and SSD';
             var matches = $(this).find('.product-info').text().toLowerCase().includes(query);
             var visible = matches && (activeCategory === 'all' || category === activeCategory);
             $(this).toggleClass('d-none', !visible);
             if (visible) count++;
         });
-        $('#searchStatus').text('Найдено товаров: ' + count);
+        $('#searchStatus').text('Products found: ' + count);
         $('#noResults').toggleClass('d-none', count !== 0);
     }
 
@@ -102,13 +102,21 @@ $(function () {
 
     if ($('#productRows').length) {
         var products = [
-            { name: 'ASUS Vivobook S14', category: 'Ноутбуки', price: 419990 },
-            { name: 'ASUS Zenbook 14 OLED', category: 'Ноутбуки', price: 549990 },
-            { name: 'GeForce RTX 4060 8GB', category: 'Видеокарты', price: 189990 },
-            { name: 'AMD Ryzen 5 5600', category: 'Процессоры', price: 59990 }
+            { name: 'ASUS Vivobook S14', category: 'Laptops', price: 419990 },
+            { name: 'ASUS Zenbook 14 OLED', category: 'Laptops', price: 549990 },
+            { name: 'GeForce RTX 4060 8GB', category: 'Graphics cards', price: 189990 },
+            { name: 'AMD Ryzen 5 5600', category: 'Processors', price: 59990 }
         ];
         var editingIndex = -1;
         var storageKey = 'iaidev-products';
+        var oldCategories = {
+            "Ноутбуки": "Laptops",
+            "Видеокарты": "Graphics cards",
+            "Процессоры": "Processors",
+            "Охлаждение": "Cooling",
+            "Память и SSD": "Memory and SSD",
+            "Питание": "Power supplies"
+        };
         try {
             var saved = localStorage.getItem(storageKey);
             if (saved !== null) {
@@ -117,10 +125,15 @@ $(function () {
                 for (var i = 0; i < parsed.length; i++) {
                     if (!parsed[i] || typeof parsed[i].name !== 'string' || typeof parsed[i].category !== 'string' || !Number.isInteger(parsed[i].price) || parsed[i].price < 1) throw new Error('Invalid product');
                 }
+                for (var i = 0; i < parsed.length; i++) {
+                    if (typeof oldCategories[parsed[i].category] === 'string') {
+                        parsed[i].category = oldCategories[parsed[i].category];
+                    }
+                }
                 products = parsed;
             }
         } catch (error) {
-            $('#storageStatus').text('Сохранённый список недоступен. Показан начальный список товаров.');
+            $('#storageStatus').text('The saved list is unavailable. Showing the default products.');
         }
 
         function renderProducts() {
@@ -129,14 +142,14 @@ $(function () {
                 var row = $('<tr>');
                 $('<td>').text(products[i].name).appendTo(row);
                 $('<td>').text(products[i].category).appendTo(row);
-                $('<td>').text(products[i].price.toLocaleString('ru-RU')).appendTo(row);
+                $('<td>').text(products[i].price.toLocaleString('en-US')).appendTo(row);
                 var actions = $('<div>').addClass('table-actions');
-                $('<button>').attr({ type: 'button', 'data-index': i }).addClass('btn btn-sm btn-outline-burgundy edit-product').text('Изменить').appendTo(actions);
-                $('<button>').attr({ type: 'button', 'data-index': i }).addClass('btn btn-sm btn-outline-danger delete-product').text('Удалить').appendTo(actions);
+                $('<button>').attr({ type: 'button', 'data-index': i }).addClass('btn btn-sm btn-outline-burgundy edit-product').text('Edit').appendTo(actions);
+                $('<button>').attr({ type: 'button', 'data-index': i }).addClass('btn btn-sm btn-outline-danger delete-product').text('Delete').appendTo(actions);
                 $('<td>').append(actions).appendTo(row);
                 $('#productRows').append(row);
             }
-            if (products.length === 0) $('#productRows').append($('<tr>').append($('<td>').attr('colspan', 4).text('Список пуст. Добавьте первый товар.')));
+            if (products.length === 0) $('#productRows').append($('<tr>').append($('<td>').attr('colspan', 4).text('Your list is empty. Add a product.')));
         }
 
         function saveProducts() {
@@ -144,7 +157,7 @@ $(function () {
                 localStorage.setItem(storageKey, JSON.stringify(products));
                 $('#storageStatus').text('');
             } catch (error) {
-                $('#storageStatus').text('Браузер не разрешил сохранение. Изменения доступны до перезагрузки страницы.');
+                $('#storageStatus').text('Could not save changes. They will be lost after a reload.');
             }
             renderProducts();
         }
@@ -153,8 +166,8 @@ $(function () {
             editingIndex = -1;
             $('#productForm')[0].reset();
             $('#productForm .form-control, #productForm .form-select').removeClass('is-valid is-invalid').removeAttr('aria-invalid');
-            $('#productFormTitle').text('Добавить товар');
-            $('#saveProduct').text('Добавить');
+            $('#productFormTitle').text('Add a product');
+            $('#saveProduct').text('Add');
             $('#cancelEdit').addClass('d-none');
         }
 
@@ -173,10 +186,10 @@ $(function () {
             var product = { name: name, category: category, price: price };
             if (editingIndex === -1) {
                 products.push(product);
-                $('#productStatus').text('Товар добавлен.');
+                $('#productStatus').text('Product added.');
             } else {
                 products[editingIndex] = product;
-                $('#productStatus').text('Товар обновлён.');
+                $('#productStatus').text('Product updated.');
             }
             saveProducts();
             resetProductForm();
@@ -189,8 +202,8 @@ $(function () {
             $('#productName').val(product.name).trigger('focus');
             $('#productCategory').val(product.category);
             $('#productPrice').val(product.price);
-            $('#productFormTitle').text('Редактировать товар');
-            $('#saveProduct').text('Сохранить');
+            $('#productFormTitle').text('Edit product');
+            $('#saveProduct').text('Save');
             $('#cancelEdit').removeClass('d-none');
             $('#productStatus').text('');
         });
@@ -198,12 +211,12 @@ $(function () {
         $('#cancelEdit').on('click', resetProductForm);
         $('#productRows').on('click', '.delete-product', function () {
             var index = Number($(this).attr('data-index'));
-            if (!confirm('Удалить «' + products[index].name + '»?')) return;
+            if (!confirm('Delete "' + products[index].name + '"?')) return;
             products.splice(index, 1);
             if (editingIndex === index) resetProductForm();
             else if (editingIndex > index) editingIndex--;
             saveProducts();
-            $('#productStatus').text('Товар удалён.');
+            $('#productStatus').text('Product deleted.');
         });
         renderProducts();
     }
@@ -217,7 +230,7 @@ $(function () {
         function showImage() {
             var selected = galleryImages.eq(currentImage);
             $('#lightboxImage').stop(true, true).fadeOut(120, function () {
-                $(this).attr({ src: selected.attr('src').replace('w=600', 'w=1200'), alt: selected.attr('alt') }).fadeIn(180);
+                $(this).attr({ src: selected.attr('src'), alt: selected.attr('alt') }).fadeIn(180);
                 $('#galleryCaption').text(selected.attr('alt'));
                 $('#galleryCounter').text((currentImage + 1) + ' / ' + galleryImages.length);
             });

@@ -1,62 +1,37 @@
-# IAIDev - Final Project
+# IAIDev
 
-A small electronics store website for Kazakhstan. The Final extends our Midterm and Endterm and keeps the same five pages, team and burgundy design.
+A student website for browsing and comparing laptops and PC parts.
+Built with HTML, CSS, Bootstrap, JavaScript and jQuery.
 
-- Website: https://taillin.github.io/online-store-front/
-- Repository: https://github.com/Taillin/online-store-front
-- Team: Yermakov Ilya, Khametov Ilyas, Askar Azamat.
-- Technologies: HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1.
+[Live website](https://taillin.github.io/online-store-front/) | [GitHub](https://github.com/Taillin/online-store-front)
 
-## Pages and features
+## Team
 
-| Page | Features |
-| --- | --- |
-| `index.html` | Home, featured products, navigation |
-| `catalog.html` | Search, category filters, live DummyJSON product selection |
-| `compare.html` | Specification table and personal list with add/edit/delete and localStorage |
-| `about.html` | Project information, gallery, six animated FAQ answers, sources and AI credit |
-| `contact.html` | Local sign-in, profile, registration validation, contact form |
+Yermakov Ilya, Khametov Ilyas and Askar Azamat.
 
-## Final additions
+## Features
 
-- Light/dark theme on all pages, saved after reload and navigation.
-- Validated sign-in with name/email, persistent profile and sign-out.
-- FAQ using jQuery `.slideToggle()` and + / minus indicators.
-- Real `fetch()` requests to `https://dummyjson.com/products/category/laptops?limit=6` and the `smartphones` category. Category selection, refresh, loading, empty and error states.
-- Local copies of Bootstrap, jQuery and static photographs; responsive layout.
+- Five pages: Home, Catalog, Compare, About and Contact.
+- Product search, category filters and a saved product list.
+- Light and dark themes, saved in localStorage.
+- Demo sign-in with name and email, plus sign-out.
+- Form validation, a photo gallery and six FAQ questions.
+- Products from the DummyJSON API, with categories and a refresh button.
 
-`js/script.js` keeps the Endterm features. `js/theme.js` restores the theme before rendering. `js/final.js` contains the four Final features in named, straightforward functions. Styles remain in `css/style.css`. No framework, build step or backend is required.
+The layout works on phones, tablets and computers. This is a demo: there are no real orders, payments or accounts. Passwords are not stored.
 
-## Run and demonstrate
+## Run locally
 
-Run `python -m http.server 8000 --bind 127.0.0.1` in the project folder, then visit http://localhost:8000. VS Code Live Server also works. Use an HTTP server for consistent browser storage across pages. The live API needs internet access; static resources are local.
+Open the project folder in a terminal:
 
-1. Switch theme, reload and open another page.
-2. Select **Войти**, try an invalid email, then use `Demo Student` / `student@example.com`. Reload, navigate, then sign out.
-3. Open **О нас** and expand/collapse FAQ questions.
-4. Open **Каталог**, choose laptops/smartphones in the online selection and refresh. Block the API in DevTools to demonstrate the error; unblock it and retry.
+```sh
+python -m http.server 8000 --bind 127.0.0.1
+```
 
-## Team responsibilities
+Then open [localhost:8000](http://localhost:8000). The API needs internet access. Other files are included in the project.
 
-| Member | Endterm contribution from the original README | Final study and demonstration responsibility |
-| --- | --- | --- |
-| Yermakov Ilya | Home/catalog, search/filtering, image gallery | Public API, categories, JSON and request errors |
-| Khametov Ilyas | Comparison/contact/about pages, registration validation | Sign-in validation, saved profile and sign-out |
-| Askar Azamat | Styling, responsiveness, CRUD and localStorage | Theme persistence, FAQ animation and responsive checks |
+## Credits
 
-The Final column distributes preparation and demonstration work; it does not claim that AI-assisted changes were independently written by those members. Every student should understand the full code before defense.
+Bootstrap 5.3.3 and jQuery 3.7.1 are included in `vendor` with their licenses. Photos are from [Unsplash](https://unsplash.com); online products are from [DummyJSON](https://dummyjson.com/docs/products).
 
-## Materials
-
-- [Group report with screenshots](docs/REPORT.md) and [PDF report](docs/Final_Project_Report.pdf).
-- [Russian defense guide](DEFENSE_RU.md): three-minute demo, questions and file map.
-- [Requirement/check list](docs/CHECKLIST.md).
-- [Resource sources and library licenses](ASSETS.md).
-
-This is a classroom demonstration: sign-in is not secure authentication, passwords are not stored, and forms do not send messages or process purchases. Name/email, theme and the comparison list are saved in this browser. DummyJSON products and USD prices are sample data, separate from the example KZT catalog.
-
-## AI acknowledgement
-
-OpenAI ChatGPT / Codex assisted with the Final implementation, debugging, browser checks and preparation of the report and defense guide. This assistance is acknowledged on every page and in the report. The team must review the changes and be able to explain them.
-
-Submission deadline supplied by the team: **18 November 2026** (exact time is in LMS). Each member must submit both links individually. All submission commits must precede the LMS cutoff.
+OpenAI ChatGPT / Codex helped with code, testing, translation and project materials.

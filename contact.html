@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты — IAIDevelopment Казахстан</title>
+    <title>Contact - IAIDev</title>
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
     <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -15,127 +15,127 @@
             <a href="index.html" class="logo">
                 <span class="logo-accent">IAI</span>Dev
             </a>
-            <nav class="main-nav" aria-label="Основная навигация">
+            <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
-                    <li class="nav-item"><a href="catalog.html" class="nav-link">Каталог</a></li>
-                    <li class="nav-item"><a href="compare.html" class="nav-link">Сравнение</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Контакты</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="catalog.html" class="nav-link">Catalog</a></li>
+                    <li class="nav-item"><a href="compare.html" class="nav-link">Compare</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-tools">
-                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-burgundy" aria-pressed="false">Тёмная тема</button>
-                <a id="accountLink" class="account-link" href="contact.html#account">Войти</a>
-                <button id="signOut" type="button" class="btn btn-sm btn-outline-burgundy" hidden>Выйти</button>
+                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-burgundy" aria-pressed="false">Dark theme</button>
+                <a id="accountLink" class="account-link" href="contact.html#account">Sign in</a>
+                <button id="signOut" type="button" class="btn btn-sm btn-outline-burgundy" hidden>Sign out</button>
             </div>
         </div>
     </header>
     <p id="storageNotice" class="container storage-notice" role="status"></p>
-    <noscript><p class="container alert alert-warning">Включите JavaScript для входа, темы, поиска и интерактивных функций.</p></noscript>
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use the interactive features.</p></noscript>
 
     <main class="py-5">
         <div class="container">
             <div class="section-heading text-center mb-5">
-                <h1 class="section-title">Свяжитесь с нами</h1>
+                <h1 class="section-title">Contact and profile</h1>
                 <p class="section-subtitle">
-                    Есть вопросы по выбору гаджетов или доставке по Казахстану? Напишите нам или посетите наши офисы
+                    Try the profile and contact forms. This is a student demo.
                 </p>
             </div>
 
             <section id="account" class="contact-card mb-5" aria-labelledby="accountTitle">
-                <h2 id="accountTitle" class="h4 mb-3">Вход в профиль</h2>
-                <p class="text-muted">Учебный профиль сохраняет имя и email в этом браузере. Пароль не нужен, покупки не оформляются.</p>
+                <h2 id="accountTitle" class="h4 mb-3">Sign in</h2>
+                <p class="text-muted">Save a demo profile in this browser. No password or real account is needed.</p>
                 <form id="signInForm" novalidate>
                     <div class="row g-3">
                         <div class="col-12 col-md-5">
-                            <label for="signInName" class="form-label">Имя</label>
+                            <label for="signInName" class="form-label">Name</label>
                             <input id="signInName" type="text" class="form-control" autocomplete="given-name" minlength="2" maxlength="40" aria-describedby="signInNameError" required>
-                            <div id="signInNameError" class="invalid-feedback">Введите от 2 до 40 символов.</div>
+                            <div id="signInNameError" class="invalid-feedback">Enter 2 to 40 characters.</div>
                         </div>
                         <div class="col-12 col-md-5">
                             <label for="signInEmail" class="form-label">Email</label>
                             <input id="signInEmail" type="email" class="form-control" autocomplete="email" maxlength="100" aria-describedby="signInEmailError" required>
-                            <div id="signInEmailError" class="invalid-feedback">Введите корректный email.</div>
+                            <div id="signInEmailError" class="invalid-feedback">Enter a valid email address.</div>
                         </div>
                         <div class="col-12 col-md-2 d-flex align-items-end">
-                            <button type="submit" class="btn btn-burgundy w-100">Войти</button>
+                            <button type="submit" class="btn btn-burgundy w-100">Sign in</button>
                         </div>
                     </div>
                     <p id="signInStatus" class="text-danger mt-3 mb-0" role="status"></p>
                 </form>
                 <div id="profilePanel" hidden>
-                    <h3 class="h5">Здравствуйте, <span id="profileName" tabindex="-1"></span>!</h3>
+                    <h3 class="h5">Hello, <span id="profileName" tabindex="-1"></span>!</h3>
                     <p id="profileEmail" class="profile-email"></p>
-                    <p>Профиль сохранён. Можно перейти к подбору техники или своему списку сравнения.</p>
-                    <a href="compare.html#productForm" class="btn btn-burgundy">Мой список товаров</a>
-                    <p class="small text-muted mt-3 mb-0">Для выхода нажмите «Выйти» в верхнем меню.</p>
+                    <p>Your profile is saved. You can now browse products or open your list.</p>
+                    <a href="compare.html#productForm" class="btn btn-burgundy">My product list</a>
+                    <p class="small text-muted mt-3 mb-0">Use Sign out in the top menu to remove your profile.</p>
                 </div>
             </section>
 
             <div class="row gx-4 gy-5 gx-lg-5">
                 <div class="col-12 col-lg-7">
                     <div class="contact-card">
-                        <h2 class="h4 mb-4 text-burgundy">Форма обратной связи</h2>
+                        <h2 class="h4 mb-4 text-burgundy">Contact form</h2>
 
                         <form id="contactForm" novalidate>
                             <div class="row g-3">
                                 <div class="col-12 col-md-6">
-                                    <label for="userName" class="form-label">Ваше имя <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userName" name="name" placeholder="Например, Арман" required>
-                                    <div class="invalid-feedback">Введите имя.</div>
+                                    <label for="userName" class="form-label">Your name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="userName" name="name" placeholder="For example, Arman" required>
+                                    <div class="invalid-feedback">Enter your name.</div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="userEmail" class="form-label">Электронная почта <span class="text-danger">*</span></label>
+                                    <label for="userEmail" class="form-label">Email <span class="text-danger">*</span></label>
                                     <input type="email" class="form-control" id="userEmail" name="email" placeholder="arman@example.kz" required>
-                                    <div class="invalid-feedback">Введите корректный email.</div>
+                                    <div class="invalid-feedback">Enter a valid email address.</div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="userPhone" class="form-label">Номер телефона</label>
+                                    <label for="userPhone" class="form-label">Phone number</label>
                                     <input type="tel" class="form-control" id="userPhone" name="phone" placeholder="+7 (777) 000-00-00">
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="userCity" class="form-label">Ваш город в РК</label>
+                                    <label for="userCity" class="form-label">City</label>
                                     <select class="form-select" id="userCity" name="city">
-                                        <option value="almaty" selected>г. Алматы</option>
-                                        <option value="astana">г. Астана</option>
-                                        <option value="shymkent">г. Шымкент</option>
-                                        <option value="karaganda">г. Караганда</option>
-                                        <option value="other">Другой регион Казахстана</option>
+                                        <option value="almaty" selected>Almaty</option>
+                                        <option value="astana">Astana</option>
+                                        <option value="shymkent">Shymkent</option>
+                                        <option value="karaganda">Karaganda</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="userSubject" class="form-label">Тема обращения</label>
+                                    <label for="userSubject" class="form-label">Subject</label>
                                     <select class="form-select" id="userSubject" name="subject">
-                                        <option value="consultation">Консультация по подбору комплектующих</option>
-                                        <option value="order">Статус заказа и доставка</option>
-                                        <option value="warranty">Вопросы по гарантии и сервису</option>
-                                        <option value="cooperation">Предложение о сотрудничестве</option>
+                                        <option value="consultation">Product question</option>
+                                        <option value="order">Delivery question</option>
+                                        <option value="warranty">Warranty question</option>
+                                        <option value="cooperation">Other question</option>
                                     </select>
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="userMessage" class="form-label">Сообщение <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="userMessage" name="message" rows="5" placeholder="Напишите, какой гаджет вас интересует или задайте вопрос..." required></textarea>
-                                    <div class="invalid-feedback">Введите сообщение.</div>
+                                    <label for="userMessage" class="form-label">Message <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="userMessage" name="message" rows="5" placeholder="Write your question here..." required></textarea>
+                                    <div class="invalid-feedback">Enter a message.</div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                                         <label class="form-check-label text-muted small" for="agreeTerms">
-                                            Я согласен на обработку персональных данных в соответствии с законодательством РК
+                                            I understand this demo does not send messages.
                                         </label>
-                                        <div class="invalid-feedback">Подтвердите согласие.</div>
+                                        <div class="invalid-feedback">Please tick the box.</div>
                                     </div>
                                 </div>
 
                                 <div class="col-12 mt-4">
-                                    <button type="submit" class="btn btn-burgundy">Отправить сообщение</button>
+                                    <button type="submit" class="btn btn-burgundy">Check message</button>
                                 </div>
                             </div>
                         <p id="contactStatus" class="mt-3 mb-0" role="status"></p>
@@ -145,30 +145,30 @@
 
                 <div class="col-12 col-lg-5">
                     <div class="contact-card h-100">
-                        <h2 class="h4 mb-4 text-burgundy">Наши филиалы в Казахстане</h2>
+                        <h2 class="h4 mb-4 text-burgundy">Example contact details</h2>
 
                         <div class="mb-4 pb-3 border-bottom">
-                            <h3 class="h6 fw-bold mb-1">📍 Главный офис (Астана)</h3>
-                            <p class="text-muted mb-1">г. Астана, проспект Мангилик Ел, 55</p>
-                            <p class="text-muted small mb-0">Пн — Сб: 10:00 – 20:00 (Вс: выходной)</p>
+                            <h3 class="h6 fw-bold mb-1">Astana</h3>
+                            <p class="text-muted mb-1">55 Mangilik El Avenue, Astana</p>
+                            <p class="text-muted small mb-0">Mon-Sat: 10:00-20:00</p>
                         </div>
 
                         <div class="mb-4 pb-3 border-bottom">
-                            <h3 class="h6 fw-bold mb-1">📍 Филиал (Алматы)</h3>
-                            <p class="text-muted mb-1">пр. Абая 52, БЦ «Байзак», 4 этаж</p>
-                            <p class="text-muted small mb-0">Пн — Вс: 10:00 – 21:00 (без выходных)</p>
+                            <h3 class="h6 fw-bold mb-1">Almaty</h3>
+                            <p class="text-muted mb-1">52 Abay Avenue, Almaty</p>
+                            <p class="text-muted small mb-0">Mon-Sun: 10:00-21:00</p>
                         </div>
 
                         <div class="mb-4 pb-3 border-bottom">
-                            <h3 class="h6 fw-bold mb-2">📞 Телефоны службы поддержки</h3>
-                            <p class="mb-1"><strong>Городской:</strong> <a href="tel:+77273456789">+7 (727) 345-67-89</a></p>
-                            <p class="mb-0"><strong>Мобильный / WhatsApp:</strong> <a href="tel:+77771234567">+7 (777) 123-45-67</a></p>
+                            <h3 class="h6 fw-bold mb-2">Phone</h3>
+                            <p class="mb-1"><strong>Office:</strong> <a href="tel:+77273456789">+7 (727) 345-67-89</a></p>
+                            <p class="mb-0"><strong>Mobile:</strong> <a href="tel:+77771234567">+7 (777) 123-45-67</a></p>
                         </div>
 
                         <div>
-                            <h3 class="h6 fw-bold mb-2">✉️ Электронная почта</h3>
-                            <p class="mb-1"><strong>Отдел продаж:</strong> <a href="mailto:sales@iaidevelopment.kz">sales@iaidevelopment.kz</a></p>
-                            <p class="mb-0"><strong>Техподдержка:</strong> <a href="mailto:support@iaitech.kz">support@iaitech.kz</a></p>
+                            <h3 class="h6 fw-bold mb-2">Email</h3>
+                            <p class="mb-1"><strong>Sales:</strong> <a href="mailto:sales@iaidevelopment.kz">sales@iaidevelopment.kz</a></p>
+                            <p class="mb-0"><strong>Support:</strong> <a href="mailto:support@iaitech.kz">support@iaitech.kz</a></p>
                         </div>
                     </div>
                 </div>
@@ -176,33 +176,33 @@
 
 
             <section class="contact-card mt-5" aria-labelledby="registrationTitle">
-                <h2 id="registrationTitle" class="h4 mb-3">Регистрация</h2>
-                <p class="text-muted">Заполните форму для проверки данных. Это учебная форма: аккаунт не создаётся.</p>
+                <h2 id="registrationTitle" class="h4 mb-3">Registration form</h2>
+                <p class="text-muted">Try form validation. This demo does not create an account.</p>
                 <form id="registrationForm" novalidate>
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
-                            <label for="registerName" class="form-label">Имя *</label>
+                            <label for="registerName" class="form-label">Name *</label>
                             <input id="registerName" class="form-control" type="text" autocomplete="name" required>
-                            <div class="invalid-feedback">Введите имя.</div>
+                            <div class="invalid-feedback">Enter your name.</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="registerEmail" class="form-label">Email *</label>
                             <input id="registerEmail" class="form-control" type="email" autocomplete="email" required>
-                            <div class="invalid-feedback">Введите корректный email.</div>
+                            <div class="invalid-feedback">Enter a valid email address.</div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <label for="registerPassword" class="form-label">Пароль *</label>
+                            <label for="registerPassword" class="form-label">Password *</label>
                             <input id="registerPassword" class="form-control" type="password" autocomplete="new-password" minlength="8" aria-describedby="passwordHelp passwordStrength" required>
-                            <div class="invalid-feedback">Нужно минимум 8 символов без пробелов.</div>
-                            <div id="passwordHelp" class="form-text">Для надёжного пароля используйте буквы разного регистра, цифры и символы.</div>
-                            <p id="passwordStrength" class="small mt-2 mb-0" aria-live="polite">Надёжность: —</p>
+                            <div class="invalid-feedback">Use at least 8 characters without spaces.</div>
+                            <div id="passwordHelp" class="form-text">Use upper and lower case letters, numbers and symbols.</div>
+                            <p id="passwordStrength" class="small mt-2 mb-0" aria-live="polite">Strength: -</p>
                         </div>
                         <div class="col-12 col-md-6">
-                            <label for="confirmPassword" class="form-label">Повторите пароль *</label>
+                            <label for="confirmPassword" class="form-label">Confirm password *</label>
                             <input id="confirmPassword" class="form-control" type="password" autocomplete="new-password" required>
-                            <div class="invalid-feedback">Пароли должны совпадать.</div>
+                            <div class="invalid-feedback">Passwords must match.</div>
                         </div>
-                        <div class="col-12"><button class="btn btn-burgundy" type="submit">Проверить регистрацию</button></div>
+                        <div class="col-12"><button class="btn btn-burgundy" type="submit">Check registration</button></div>
                     </div>
                     <p id="registrationStatus" class="mt-3 mb-0" role="status"></p>
                 </form>
@@ -216,35 +216,35 @@
                 <div class="col-12 col-md-4">
                     <h4 class="footer-brand"><span class="logo-accent">IAI</span>Dev</h4>
                     <p class="footer-desc">
-                        Студенческий проект интернет-магазина компьютерной техники и электроники в Казахстане.
+                        A student project about computer hardware in Kazakhstan.
                     </p>
-                    <p class="footer-contact"><strong>Город:</strong> Астана, проспект Мангилик Ел, 55/</p>
+                    <p class="footer-contact"><strong>Location:</strong> 55/1 Mangilik El Avenue, Astana</p>
                     <p class="footer-contact"><strong>Email:</strong> 254797@astanait.edu.kz</p>
-                    <p class="footer-contact"><strong>Телефон:</strong> +7 (727) 676 67 67, +7 (777) 676 67 67</p>
+                    <p class="footer-contact"><strong>Phone:</strong> +7 (727) 676 67 67, +7 (777) 676 67 67</p>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h5 class="footer-title">Навигация</h5>
+                    <h5 class="footer-title">Pages</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="catalog.html">Каталог гаджетов</a></li>
-                        <li><a href="compare.html">Сравнение товаров</a></li>
-                        <li><a href="about.html">О магазине</a></li>
-                        <li><a href="contact.html">Обратная связь</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h5 class="footer-title">Мы в соцсетях</h5>
+                    <h5 class="footer-title">Links</h5>
                     <ul class="footer-links">
                         <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="https://t.me" target="_blank" rel="noopener">Telegram Казахстан</a></li>
-                        <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube-обзоры</a></li>
-                        <li><a href="https://github.com/Taillin/online-store-front" target="_blank" rel="noopener">GitHub Репозиторий</a></li>
+                        <li><a href="https://t.me" target="_blank" rel="noopener">Telegram</a></li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://github.com/Taillin/online-store-front" target="_blank" rel="noopener">GitHub repository</a></li>
                     </ul>
                 </div>
             </div>
-            <p class="ai-credit">Учебный проект. OpenAI ChatGPT / Codex использовался для доработки кода, проверки функций и подготовки материалов. <a href="about.html#projectCredits">Подробнее</a></p>
+            <p class="ai-credit">Student project. OpenAI ChatGPT / Codex helped with code, testing and project materials. <a href="about.html#projectCredits">Credits</a></p>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">© 2026 IAIDevelepment Казахстан. Final Project по веб-разработке. Все права защищены.</p>
+                <p class="mb-0">© 2026 IAIDev. Front-End Final Project.</p>
             </div>
         </div>
     </footer>

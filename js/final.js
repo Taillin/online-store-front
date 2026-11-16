@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateThemeButton() {
         var dark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-        themeButton.textContent = dark ? 'Светлая тема' : 'Тёмная тема';
+        themeButton.textContent = dark ? 'Light theme' : 'Dark theme';
         themeButton.setAttribute('aria-pressed', String(dark));
     }
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('iaidev-theme', theme);
             storageNotice.textContent = '';
         } catch (error) {
-            storageNotice.textContent = 'Браузер запретил сохранение темы. Она действует до закрытия страницы.';
+            storageNotice.textContent = 'The theme could not be saved. It will reset when you leave this page.';
         }
     });
     updateThemeButton();
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateProfile() {
-        accountLink.textContent = user ? 'Профиль: ' + user.name : 'Войти';
+        accountLink.textContent = user ? 'Profile: ' + user.name : 'Sign in';
         signOutButton.hidden = !user;
         if (signInForm) {
             signInForm.hidden = Boolean(user);
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             email.setAttribute('aria-invalid', String(!emailValid));
             status.textContent = '';
             if (!nameValid || !emailValid) {
-                status.textContent = 'Проверьте имя и email.';
+                status.textContent = 'Check your name and email.';
                 (nameValid ? email : name).focus();
                 return;
             }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateProfile();
                 document.getElementById('profileName').focus();
             } catch (error) {
-                status.textContent = 'Не удалось сохранить профиль. Разрешите хранение данных в браузере и повторите вход.';
+                status.textContent = 'Could not save the profile. Allow browser storage and try again.';
             }
         });
     }
@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
             user = null;
             updateProfile();
             accountLink.focus();
-            storageNotice.textContent = 'Вы вышли из профиля.';
+            storageNotice.textContent = 'You are signed out.';
         } catch (error) {
-            storageNotice.textContent = 'Не удалось удалить сохранённый профиль. Разрешите доступ к хранилищу и повторите выход.';
+            storageNotice.textContent = 'Could not remove the profile. Allow browser storage and try again.';
         }
     });
     updateProfile();
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             apiGrid.setAttribute('aria-busy', 'true');
             apiGrid.replaceChildren();
             apiStatus.classList.remove('text-danger');
-            apiStatus.textContent = 'Загружаем товары…';
+            apiStatus.textContent = 'Loading products...';
             var controller = new AbortController();
             var timeout = setTimeout(function () { controller.abort(); }, 10000);
             try {
@@ -132,23 +132,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     var card = apiTemplate.content.cloneNode(true);
                     card.querySelector('.product-title').textContent = product.title;
                     card.querySelector('.product-category').textContent = apiCategory.options[apiCategory.selectedIndex].text;
-                    card.querySelector('.product-desc').textContent = product.brand || 'Бренд не указан';
+                    card.querySelector('.product-desc').textContent = product.brand || 'No brand listed';
                     card.querySelector('.product-price').textContent = product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
                     var picture = card.querySelector('img');
                     picture.alt = product.title;
                     picture.onerror = function () {
                         this.onerror = null;
                         this.src = 'images/photo-1496181133206-80ce9b88a853.jpg';
-                        this.alt = 'Иллюстрация техники: фото товара недоступно';
+                        this.alt = 'Example photo: product image is unavailable';
                     };
                     picture.src = typeof product.thumbnail === 'string' && product.thumbnail.startsWith('https://') ? product.thumbnail : 'images/photo-1496181133206-80ce9b88a853.jpg';
                     apiGrid.appendChild(card);
                 }
-                apiStatus.textContent = data.products.length ? 'Загружено товаров: ' + data.products.length : 'В этой категории пока нет товаров.';
+                apiStatus.textContent = data.products.length ? 'Products loaded: ' + data.products.length : 'No products in this category.';
             } catch (error) {
                 apiGrid.replaceChildren();
                 apiStatus.classList.add('text-danger');
-                apiStatus.textContent = 'Не удалось загрузить товары. Проверьте интернет и нажмите «Обновить».';
+                apiStatus.textContent = 'Could not load products. Check your connection and click Refresh.';
             } finally {
                 clearTimeout(timeout);
                 apiCategory.disabled = false;

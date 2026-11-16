@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог товаров — IAIDev Казахстан</title>
+    <title>Catalog - IAIDev</title>
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
     <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -15,179 +15,179 @@
             <a href="index.html" class="logo">
                 <span class="logo-accent">IAI</span>Dev
             </a>
-            <nav class="main-nav" aria-label="Основная навигация">
+            <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
-                    <li class="nav-item"><a href="catalog.html" class="nav-link active" aria-current="page">Каталог</a></li>
-                    <li class="nav-item"><a href="compare.html" class="nav-link">Сравнение</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="catalog.html" class="nav-link active" aria-current="page">Catalog</a></li>
+                    <li class="nav-item"><a href="compare.html" class="nav-link">Compare</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-tools">
-                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-burgundy" aria-pressed="false">Тёмная тема</button>
-                <a id="accountLink" class="account-link" href="contact.html#account">Войти</a>
-                <button id="signOut" type="button" class="btn btn-sm btn-outline-burgundy" hidden>Выйти</button>
+                <button id="themeToggle" type="button" class="btn btn-sm btn-outline-burgundy" aria-pressed="false">Dark theme</button>
+                <a id="accountLink" class="account-link" href="contact.html#account">Sign in</a>
+                <button id="signOut" type="button" class="btn btn-sm btn-outline-burgundy" hidden>Sign out</button>
             </div>
         </div>
     </header>
     <p id="storageNotice" class="container storage-notice" role="status"></p>
-    <noscript><p class="container alert alert-warning">Включите JavaScript для входа, темы, поиска и интерактивных функций.</p></noscript>
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use the interactive features.</p></noscript>
 
     <main class="py-5">
         <div class="container">
             <div class="section-heading text-center mb-4">
-                <h1 class="section-title">Каталог гаджетов и комплектующих</h1>
-                <p class="section-subtitle">Учебный каталог техники: поиск, категории и сравнение. Цены приведены для примера.</p>
+                <h1 class="section-title">Laptops and PC parts</h1>
+                <p class="section-subtitle">Search and compare products. Prices are examples.</p>
             </div>
 
             <div class="mb-3">
-                <label for="catalogSearch" class="form-label">Поиск товаров</label>
-                <input id="catalogSearch" type="search" class="form-control" placeholder="Название или характеристика товара">
+                <label for="catalogSearch" class="form-label">Search products</label>
+                <input id="catalogSearch" type="search" class="form-control" placeholder="Product name or spec">
             </div>
-            <div class="filter-badge-list justify-content-center" aria-label="Категории товаров">
-                <button type="button" class="filter-badge active" data-category="all" aria-pressed="true">Все (All)</button>
-                <button type="button" class="filter-badge" data-category="Ноутбуки" aria-pressed="false">Ноутбуки</button>
-                <button type="button" class="filter-badge" data-category="Видеокарты" aria-pressed="false">Видеокарты</button>
-                <button type="button" class="filter-badge" data-category="Процессоры" aria-pressed="false">Процессоры</button>
-                <button type="button" class="filter-badge" data-category="Охлаждение" aria-pressed="false">Охлаждение</button>
-                <button type="button" class="filter-badge" data-category="Память и SSD" aria-pressed="false">Память и SSD</button>
-                <button type="button" class="filter-badge" data-category="Питание" aria-pressed="false">Питание</button>
+            <div class="filter-badge-list justify-content-center" aria-label="Product categories">
+                <button type="button" class="filter-badge active" data-category="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-badge" data-category="Laptops" aria-pressed="false">Laptops</button>
+                <button type="button" class="filter-badge" data-category="Graphics cards" aria-pressed="false">Graphics cards</button>
+                <button type="button" class="filter-badge" data-category="Processors" aria-pressed="false">Processors</button>
+                <button type="button" class="filter-badge" data-category="Cooling" aria-pressed="false">Cooling</button>
+                <button type="button" class="filter-badge" data-category="Memory and SSD" aria-pressed="false">Memory and SSD</button>
+                <button type="button" class="filter-badge" data-category="Power supplies" aria-pressed="false">Power supplies</button>
             </div>
             <p id="searchStatus" class="text-muted" role="status"></p>
-            <p id="noResults" class="alert alert-light d-none">Ничего не найдено. Измените запрос или категорию.</p>
+            <p id="noResults" class="alert alert-light d-none">No products found. Try another search or category.</p>
 
             <div class="catalog-grid">
 
                 <article class="product-card">
-                    <span class="product-badge badge-hit">ХИТ</span>
+                    <span class="product-badge badge-hit">POPULAR</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1496181133206-80ce9b88a853.jpg"
-                             alt="Ноутбук ASUS Vivobook S14"
+                             alt="ASUS Vivobook S14 laptop"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Ноутбуки</span>
+                        <span class="product-category">Laptops</span>
                         <h2 class="product-title">ASUS Vivobook S14</h2>
-                        <p class="product-desc">14" OLED 2.8K 120Hz, Intel Core i5-13500H, 16GB RAM, 512GB SSD, вес всего 1.35 кг.</p>
+                        <p class="product-desc">14-inch 2.8K OLED, Core i5, 16GB RAM, 512GB SSD, 1.35 kg.</p>
                         <div class="product-footer">
                             <span class="product-price">419 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-hit">ХИТ</span>
+                    <span class="product-badge badge-hit">POPULAR</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1541807084-5c52b6b3adef.jpg"
-                             alt="Ноутбук ASUS Zenbook 14 OLED"
+                             alt="ASUS Zenbook 14 OLED laptop"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Ноутбуки</span>
+                        <span class="product-category">Laptops</span>
                         <h2 class="product-title">ASUS Zenbook 14 OLED</h2>
-                        <p class="product-desc">14" 3K OLED, Intel Core Ultra 7, 32GB RAM, 1TB SSD, металлический корпус премиум-класса.</p>
+                        <p class="product-desc">14-inch 3K OLED, Core Ultra 7, 32GB RAM, 1TB SSD, metal body.</p>
                         <div class="product-footer">
                             <span class="product-price">549 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-hit">ХИТ</span>
+                    <span class="product-badge badge-hit">POPULAR</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1591488320449-011701bb6704.jpg"
-                             alt="Видеокарта NVIDIA GeForce RTX 4060"
+                             alt="NVIDIA GeForce RTX 4060 graphics card"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Видеокарты</span>
+                        <span class="product-category">Graphics cards</span>
                         <h2 class="product-title">GeForce RTX 4060 8GB</h2>
-                        <p class="product-desc">Архитектура Ada Lovelace, поддержка DLSS 3, Ray Tracing, низкое энергопотребление 115W.</p>
+                        <p class="product-desc">8GB memory, DLSS 3, ray tracing, 115W power use.</p>
                         <div class="product-footer">
                             <span class="product-price">189 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-sale">АКЦИЯ</span>
+                    <span class="product-badge badge-sale">SALE</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1591799264318-7e6ef8ddb7ea.jpg"
-                             alt="Процессор AMD Ryzen 5 5600"
+                             alt="AMD Ryzen 5 5600 processor"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Процессоры</span>
+                        <span class="product-category">Processors</span>
                         <h2 class="product-title">AMD Ryzen 5 5600</h2>
-                        <p class="product-desc">6 ядер, 12 потоков, сокет AM4, базовая частота 3.5 ГГц (Boost 4.4 ГГц), кэш 32 МБ, TDP 65W.</p>
+                        <p class="product-desc">6 cores, 12 threads, AM4, 3.5-4.4 GHz, 32MB cache, 65W TDP.</p>
                         <div class="product-footer">
                             <span class="product-price">59 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-hit">ХИТ</span>
+                    <span class="product-badge badge-hit">POPULAR</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1562976540-1502c2145186.jpg"
-                             alt="Оперативная память DDR4 Kingston Fury Beast"
+                             alt="Kingston Fury Beast DDR4 memory"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Оперативная память</span>
+                        <span class="product-category">Memory</span>
                         <h2 class="product-title">Kingston Fury DDR4 16GB</h2>
-                        <p class="product-desc">Комплект 2x8GB 3200MHz, тайминги CL16, стильный черный радиатор, профили Intel XMP 2.0.</p>
+                        <p class="product-desc">2 x 8GB, 3200MHz, CL16, Intel XMP 2.0.</p>
                         <div class="product-footer">
                             <span class="product-price">23 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-hit">ХИТ</span>
+                    <span class="product-badge badge-hit">POPULAR</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1587202372634-32705e3bf49c.jpg"
-                             alt="Кулер для процессора Deepcool AK400"
+                             alt="Deepcool AK400 CPU cooler"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Охлаждение</span>
+                        <span class="product-category">Cooling</span>
                         <h2 class="product-title">Deepcool AK400</h2>
-                        <p class="product-desc">Башенный кулер со 120-мм ШИМ-вентилятором, 4 тепловые трубки, отвод тепла до 220W TDP.</p>
+                        <p class="product-desc">120mm PWM fan, four heat pipes, up to 220W TDP.</p>
                         <div class="product-footer">
                             <span class="product-price">15 490 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <span class="product-badge badge-sale">АКЦИЯ</span>
+                    <span class="product-badge badge-sale">SALE</span>
                     <div class="product-image-wrap">
                         <img src="images/photo-1597872200969-2b65d56bd16b.jpg"
-                             alt="SSD накопитель Kingston KC3000 1TB"
+                             alt="Kingston KC3000 1TB SSD"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Накопители</span>
+                        <span class="product-category">Storage</span>
                         <h2 class="product-title">Kingston KC3000 1TB M.2</h2>
-                        <p class="product-desc">PCIe 4.0 NVMe, феноменальная скорость чтения до 7000 МБ/с, графеновый радиатор охлаждения.</p>
+                        <p class="product-desc">PCIe 4.0 NVMe, read speeds up to 7000 MB/s.</p>
                         <div class="product-footer">
                             <span class="product-price">46 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
@@ -195,17 +195,17 @@
                 <article class="product-card">
                     <div class="product-image-wrap">
                         <img src="images/photo-1587202372775-e229f172b9d7.jpg"
-                             alt="Блок питания Deepcool PK650D"
+                             alt="Deepcool PK650D power supply"
                              class="product-image img-fluid"
                              loading="lazy">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Питание</span>
+                        <span class="product-category">Power supplies</span>
                         <h2 class="product-title">Deepcool PK650D 650W</h2>
-                        <p class="product-desc">Сертификат 80 PLUS Bronze, тихий 120-мм вентилятор, плоские черные кабели, все виды защит.</p>
+                        <p class="product-desc">650W, 80 PLUS Bronze, 120mm fan, flat cables.</p>
                         <div class="product-footer">
                             <span class="product-price">31 990 ₸</span>
-                            <a href="compare.html" class="btn btn-sm btn-burgundy">Сравнить</a>
+                            <a href="compare.html" class="btn btn-sm btn-burgundy">Compare</a>
                         </div>
                     </div>
                 </article>
@@ -213,23 +213,23 @@
             </div>
 
             <div class="text-center mt-5 p-4 bg-white rounded border">
-                <h3 class="h4 mb-2">Затрудняетесь с выбором комплектующих?</h3>
-                <p class="text-muted mb-3">Сопоставьте характеристики процессоров, ноутбуков и видеокарт в удобной таблице.</p>
-                <a href="compare.html" class="btn btn-outline-burgundy">Перейти к таблице сравнения →</a>
+                <h3 class="h4 mb-2">Need help comparing products?</h3>
+                <p class="text-muted mb-3">See the main specs in our comparison table.</p>
+                <a href="compare.html" class="btn btn-outline-burgundy">Open comparison</a>
             </div>
 
             <section id="onlineProducts" class="mt-5" aria-labelledby="apiTitle">
-                <h2 id="apiTitle" class="h3">Ещё техника: онлайн-подборка</h2>
-                <p class="text-muted">Примеры товаров из <a href="https://dummyjson.com/docs/products" target="_blank" rel="noopener">DummyJSON</a>. Цены этой подборки указаны в USD и служат для демонстрации.</p>
+                <h2 id="apiTitle" class="h3">More products online</h2>
+                <p class="text-muted">Sample products from <a href="https://dummyjson.com/docs/products" target="_blank" rel="noopener">DummyJSON</a>. Prices in this section are examples in USD.</p>
                 <div class="api-controls">
                     <div>
-                        <label for="apiCategory" class="form-label">Категория подборки</label>
+                        <label for="apiCategory" class="form-label">Category</label>
                         <select id="apiCategory" class="form-select">
-                            <option value="laptops">Ноутбуки</option>
-                            <option value="smartphones">Смартфоны</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="smartphones">Smartphones</option>
                         </select>
                     </div>
-                    <button id="refreshProducts" class="btn btn-burgundy" type="button">Обновить</button>
+                    <button id="refreshProducts" class="btn btn-burgundy" type="button">Refresh</button>
                 </div>
                 <p id="apiStatus" class="mt-3" role="status" aria-live="polite"></p>
                 <div id="apiProducts" class="api-grid" aria-busy="false"></div>
@@ -254,35 +254,35 @@
                 <div class="col-12 col-md-4">
                     <h4 class="footer-brand"><span class="logo-accent">IAI</span>Dev</h4>
                     <p class="footer-desc">
-                        Студенческий проект интернет-магазина компьютерной техники и электроники в Казахстане.
+                        A student project about computer hardware in Kazakhstan.
                     </p>
-                    <p class="footer-contact"><strong>Город:</strong> Астана, г. Астана, проспект Мангилик Ел, 55/1</p>
+                    <p class="footer-contact"><strong>Location:</strong> 55/1 Mangilik El Avenue, Astana</p>
                     <p class="footer-contact"><strong>Email:</strong> info@iaidev.kz</p>
-                    <p class="footer-contact"><strong>Телефон:</strong> +7 (727) 345-67-89, +7 (777) 123-45-67</p>
+                    <p class="footer-contact"><strong>Phone:</strong> +7 (727) 345-67-89, +7 (777) 123-45-67</p>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h5 class="footer-title">Навигация</h5>
+                    <h5 class="footer-title">Pages</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="catalog.html">Каталог гаджетов</a></li>
-                        <li><a href="compare.html">Сравнение товаров</a></li>
-                        <li><a href="about.html">О магазине</a></li>
-                        <li><a href="contact.html">Обратная связь</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-4">
-                    <h5 class="footer-title">Мы в соцсетях</h5>
+                    <h5 class="footer-title">Links</h5>
                     <ul class="footer-links">
                         <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="https://t.me" target="_blank" rel="noopener">Telegram Казахстан</a></li>
-                        <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube-обзоры</a></li>
-                        <li><a href="https://github.com/Taillin/online-store-front" target="_blank" rel="noopener">GitHub Репозиторий</a></li>
+                        <li><a href="https://t.me" target="_blank" rel="noopener">Telegram</a></li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://github.com/Taillin/online-store-front" target="_blank" rel="noopener">GitHub repository</a></li>
                     </ul>
                 </div>
             </div>
-            <p class="ai-credit">Учебный проект. OpenAI ChatGPT / Codex использовался для доработки кода, проверки функций и подготовки материалов. <a href="about.html#projectCredits">Подробнее</a></p>
+            <p class="ai-credit">Student project. OpenAI ChatGPT / Codex helped with code, testing and project materials. <a href="about.html#projectCredits">Credits</a></p>
             <div class="footer-bottom text-center py-3">
-                <p class="mb-0">© 2026 IAIDev Казахстан. Final Project по веб-разработке. Все права защищены.</p>
+                <p class="mb-0">© 2026 IAIDev. Front-End Final Project.</p>
             </div>
         </div>
     </footer>
