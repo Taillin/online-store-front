@@ -1,74 +1,62 @@
-# IAIDEvelopment — Online Gadget & Hardware Store
+# IAIDev - Final Project
 
-**Course:** Front-End Web Development — Endterm Project
-**Topic:** A responsive gadget and computer hardware store for Kazakhstan.
+A small electronics store website for Kazakhstan. The Final extends our Midterm and Endterm and keeps the same five pages, team and burgundy design.
 
-## Description
-
-This endterm extends the existing midterm website with JavaScript and jQuery. The original five pages, burgundy design, CSS Grid catalog, Bootstrap grid and responsive styles are preserved.
+- Website: https://taillin.github.io/online-store-front/
+- Repository: https://github.com/Taillin/online-store-front
+- Team: Yermakov Ilya, Khametov Ilyas, Askar Azamat.
+- Technologies: HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1.
 
 ## Pages and features
 
-- `index.html`: home page, featured products and store advantages.
-- `catalog.html`: instant case-insensitive search by product text, category buttons working together with search, result count and empty state.
-- `compare.html`: original specification comparison plus a personal product list with full CRUD. Add products, edit or cancel changes, and confirm deletion. Rows are rendered from an array and saved in localStorage.
-- `contact.html`: original feedback form with required-field and email validation, plus a registration form. Registration checks name, email with RegEx, password length and confirmation. The weak / medium / strong indicator updates while typing. Bootstrap validation classes and text show errors and success.
-- `about.html`: Bootstrap image gallery with an enlarged modal view, previous/next buttons, arrow keys, Escape to close, and jQuery fadeOut/fadeIn transitions.
+| Page | Features |
+| --- | --- |
+| `index.html` | Home, featured products, navigation |
+| `catalog.html` | Search, category filters, live DummyJSON product selection |
+| `compare.html` | Specification table and personal list with add/edit/delete and localStorage |
+| `about.html` | Project information, gallery, six animated FAQ answers, sources and AI credit |
+| `contact.html` | Local sign-in, profile, registration validation, contact form |
 
-All JavaScript is in `js/script.js`. The project uses simple functions, loops and jQuery selectors, without a build system or code comments.
+## Final additions
 
-The project is designed for students, common people, designers and so on. The product have catalog and comparison table feature real-world hardware models:
-- Laptops: ASUS Vivobook S14, ASUS Zenbook 14 OLED
-- Graphics Card: NVIDIA GeForce RTX 4060 8GB
-- Processor: AMD Ryzen 5 5600
-- Cooling: Deepcool AK400
-- RAM: Kingston Fury Beast DDR4 16GB
-- Storage & Power: Kingston KC3000 1TB NVMe, Deepcool PK650D 650W
+- Light/dark theme on all pages, saved after reload and navigation.
+- Validated sign-in with name/email, persistent profile and sign-out.
+- FAQ using jQuery `.slideToggle()` and + / minus indicators.
+- Real `fetch()` requests to `https://dummyjson.com/products/category/laptops?limit=6` and the `smartphones` category. Category selection, refresh, loading, empty and error states.
+- Local copies of Bootstrap, jQuery and static photographs; responsive layout.
 
-## Technologies
+`js/script.js` keeps the Endterm features. `js/theme.js` restores the theme before rendering. `js/final.js` contains the four Final features in named, straightforward functions. Styles remain in `css/style.css`. No framework, build step or backend is required.
 
-HTML5, CSS3, Bootstrap 5.3.3, JavaScript, jQuery 3.7.1, localStorage, Git and GitHub.
+## Run and demonstrate
 
-## Layout and responsiveness
+Run `python -m http.server 8000 --bind 127.0.0.1` in the project folder, then visit http://localhost:8000. VS Code Live Server also works. Use an HTTP server for consistent browser storage across pages. The live API needs internet access; static resources are local.
 
-### Multi-page Structure (5 Connected Pages):
-1. **`index.html` (Home Page):** Features a hero section, popular featured gadgets, store, and footer navigation.
-2. **`catalog.html` (Catalog):** Displays all real hardware devices using CSS Grid, category filter buttons, and navigation links to the comparison table.
-3. **`compare.html` (Comparison):** Contains an HTML specification table comparing 4 devices.
-4. **`about.html` (About Us):** Presents project background, development stack and quality standards for the Kazakhstan market.
-5. **`contact.html` (Contact Us):** An interactive feedback form with inputs, text area and regional branch addresses.
+1. Switch theme, reload and open another page.
+2. Select **Войти**, try an invalid email, then use `Demo Student` / `student@example.com`. Reload, navigate, then sign out.
+3. Open **О нас** and expand/collapse FAQ questions.
+4. Open **Каталог**, choose laptops/smartphones in the online selection and refresh. Block the API in DevTools to demonstrate the error; unblock it and retry.
 
-### Core Technical Requirements:
-- **Semantic HTML5:** Built using `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` elements across all pages.
-- **Single External Stylesheet:** All styles are defined in `css/style.css` without inline or internal styling.
-- **CSS Variables (`:root`):** Configured with a custom color (`--color-primary: #6b1d2f`), gold accent (`--color-accent: #c59b27`), light cream background (`--color-bg-light: #fbf9f6`), and typography variables.
-- **Flexbox and CSS Grid Demonstration:**
-  - Header navigation menu uses **Flexbox** (`display: flex; justify-content: space-between`).
-  - Catalog product layout uses **CSS Grid** (`display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))`).
-- **Positioning Technique:** Product badges ("HIT" and "SALE") use `position: absolute` placed inside a parent card with `position: relative`.
-- **Interactive Pseudo-classes (`:hover` and `:focus`):**
-  - Buttons and cards have smooth hover transformations and shadow elevations.
-  - Form input elements highlight with a subtle border and shadow on `:focus`.
-- **Alternating Table Rows:** The `:nth-child(even)` pseudo-class provides a zebra-stripe effect on the comparison table in `compare.html`.
-- **Image Optimization:** All below-the-fold product photos include the `loading="lazy"` attribute.
-- **Responsive Web Design:**
-  - Standard Bootstrap 12-column grid (`container`, `row`, `col-*`).
-  - Two custom `@media` query breakpoints (768px for tablets and 576px for mobile phones) to adjust header alignment, typography sizing, and card layout.
+## Team responsibilities
 
-## Try the features
-
-1. Open Catalog, type `asus`, then choose Laptops or Processors. Search and category are applied together. Choose All and clear the query to restore all products.
-2. Open Contacts and submit empty forms. Try an invalid email and different passwords. Passwords need at least 8 characters without whitespace; medium adds letters and numbers, and strong needs at least 12 characters, lowercase and uppercase letters, a number and a symbol.
-3. Open Comparison, add a product, edit it, cancel an edit, and delete it with confirmation. Reload to check that the list is saved.
-4. Open About, select a gallery image, use the navigation buttons or arrow keys, and close with Escape.
-
-The forms demonstrate client-side validation only: they do not create accounts or send messages. Passwords are not stored. The personal product list is separate from the static catalog and comparison specifications. If browser storage is unavailable, changes remain in memory until reload.
-
-## Group members and contributions
-
-| Member | Midterm contribution | Endterm contribution |
+| Member | Endterm contribution from the original README | Final study and demonstration responsibility |
 | --- | --- | --- |
-| Yermakov Ilya | Home and catalog HTML, catalog grid and CSS variables |  Implemented real-time product search and category filters using jQuery and the image gallery with lightbox navigation and jQuery fade-in and fade-out effects. |
-| Khametov Ilyas | Comparison, contacts and about pages | Implemented registration form validation, email verification using RegEx, the password strength indicator and password confirmation. |
-| Askar Azamat | Table and form styling, grid and responsive media queries | Implemented the dynamic product table with CRUD operations and localStorage |
+| Yermakov Ilya | Home/catalog, search/filtering, image gallery | Public API, categories, JSON and request errors |
+| Khametov Ilyas | Comparison/contact/about pages, registration validation | Sign-in validation, saved profile and sign-out |
+| Askar Azamat | Styling, responsiveness, CRUD and localStorage | Theme persistence, FAQ animation and responsive checks |
 
+The Final column distributes preparation and demonstration work; it does not claim that AI-assisted changes were independently written by those members. Every student should understand the full code before defense.
+
+## Materials
+
+- [Group report with screenshots](docs/REPORT.md) and [PDF report](docs/Final_Project_Report.pdf).
+- [Russian defense guide](DEFENSE_RU.md): three-minute demo, questions and file map.
+- [Requirement/check list](docs/CHECKLIST.md).
+- [Resource sources and library licenses](ASSETS.md).
+
+This is a classroom demonstration: sign-in is not secure authentication, passwords are not stored, and forms do not send messages or process purchases. Name/email, theme and the comparison list are saved in this browser. DummyJSON products and USD prices are sample data, separate from the example KZT catalog.
+
+## AI acknowledgement
+
+OpenAI ChatGPT / Codex assisted with the Final implementation, debugging, browser checks and preparation of the report and defense guide. This assistance is acknowledged on every page and in the report. The team must review the changes and be able to explain them.
+
+Submission deadline supplied by the team: **18 November 2026** (exact time is in LMS). Each member must submit both links individually. All submission commits must precede the LMS cutoff.
