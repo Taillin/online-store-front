@@ -3,7 +3,7 @@
 Website for browsing and comparing laptops and PC parts.
 Built with HTML, CSS, Bootstrap, JavaScript and jQuery.
 
-website(https://taillin.github.io/online-store-front/) ,GitHub (https://github.com/Taillin/online-store-front)
+[Website](https://taillin.github.io/online-store-front/) | [GitHub](https://github.com/Taillin/online-store-front)
 
 ## Team
 

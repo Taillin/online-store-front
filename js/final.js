@@ -1,5 +1,16 @@
 // Final Project: theme, local profile, FAQ and public product API.
 document.addEventListener('DOMContentLoaded', function () {
+    function validName(value) {
+        if (typeof value !== 'string') return false;
+        var length = value.trim().length;
+        return length >= 2 && length <= 40;
+    }
+
+    function validEmail(value) {
+        if (typeof value !== 'string') return false;
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+    }
+
     var themeButton = document.getElementById('themeToggle');
     var storageNotice = document.getElementById('storageNotice');
 
@@ -31,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
         var savedUser = JSON.parse(localStorage.getItem('iaidev-user'));
-        if (savedUser && typeof savedUser.name === 'string' && savedUser.name.trim().length >= 2 && savedUser.name.length <= 40 && typeof savedUser.email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(savedUser.email)) {
+        if (savedUser && validName(savedUser.name) && validEmail(savedUser.email)) {
             user = savedUser;
         }
     } catch (error) {
@@ -57,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var name = document.getElementById('signInName');
             var email = document.getElementById('signInEmail');
             var status = document.getElementById('signInStatus');
-            var nameValid = name.value.trim().length >= 2 && name.value.trim().length <= 40;
-            var emailValid = email.validity.valid && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+            var nameValid = validName(name.value);
+            var emailValid = email.validity.valid && validEmail(email.value);
             name.classList.toggle('is-invalid', !nameValid);
             email.classList.toggle('is-invalid', !emailValid);
             name.setAttribute('aria-invalid', String(!nameValid));
@@ -66,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
             status.textContent = '';
             if (!nameValid || !emailValid) {
                 status.textContent = 'Check your name and email.';
-                (nameValid ? email : name).focus();
+                if (!nameValid) name.focus();
+                else email.focus();
                 return;
             }
             var nextUser = { name: name.value.trim(), email: email.value.trim() };
@@ -97,11 +109,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Each FAQ button opens its own answer with a jQuery animation.
     $('.faq-question').on('click', function () {
-        var open = $(this).attr('aria-expanded') === 'true';
-        $(this).attr('aria-expanded', String(!open));
-        $(this).find('.faq-indicator').text(open ? '+' : '−');
+        var button = $(this);
+        var answer = $('#' + button.attr('aria-controls'));
+        var open = button.attr('aria-expanded') === 'true';
+        button.attr('aria-expanded', String(!open));
+        button.find('.faq-indicator').text(open ? '+' : '−');
         var duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 200;
-        $('#' + $(this).attr('aria-controls')).stop(true, true).slideToggle(duration);
+        answer.stop(true, true).slideToggle(duration);
     });
 
     var apiCategory = document.getElementById('apiCategory');
@@ -111,6 +125,30 @@ document.addEventListener('DOMContentLoaded', function () {
         var apiGrid = document.getElementById('apiProducts');
         var apiTemplate = document.getElementById('apiProductTemplate');
 
+        // Build cards from the received product list.
+        function showApiProducts(products) {
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            if (!product || typeof product.title !== 'string') throw new Error('Invalid title');
+            if (!Number.isFinite(product.price) || product.price < 0) throw new Error('Invalid price');
+            var card = apiTemplate.content.cloneNode(true);
+            card.querySelector('.product-title').textContent = product.title;
+            card.querySelector('.product-category').textContent = apiCategory.options[apiCategory.selectedIndex].text;
+            card.querySelector('.product-desc').textContent = product.brand || 'No brand listed';
+            card.querySelector('.product-price').textContent = product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            var picture = card.querySelector('img');
+            picture.alt = product.title;
+            picture.onerror = function () {
+                this.onerror = null;
+                this.src = 'images/photo-1496181133206-80ce9b88a853.jpg';
+                this.alt = 'Example photo: product image is unavailable';
+            };
+            picture.src = typeof product.thumbnail === 'string' && product.thumbnail.startsWith('https://') ? product.thumbnail : 'images/photo-1496181133206-80ce9b88a853.jpg';
+            apiGrid.appendChild(card);
+        }
+        }
+
+        // Fetch data, then pass it to the card function.
         async function loadApiProducts() {
             apiCategory.disabled = true;
             refreshButton.disabled = true;
@@ -126,24 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 var data = await response.json();
                 if (!Array.isArray(data.products)) throw new Error('Invalid response');
-                for (var i = 0; i < data.products.length; i++) {
-                    var product = data.products[i];
-                    if (!product || typeof product.title !== 'string' || typeof product.price !== 'number' || !Number.isFinite(product.price) || product.price < 0) throw new Error('Invalid product');
-                    var card = apiTemplate.content.cloneNode(true);
-                    card.querySelector('.product-title').textContent = product.title;
-                    card.querySelector('.product-category').textContent = apiCategory.options[apiCategory.selectedIndex].text;
-                    card.querySelector('.product-desc').textContent = product.brand || 'No brand listed';
-                    card.querySelector('.product-price').textContent = product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    var picture = card.querySelector('img');
-                    picture.alt = product.title;
-                    picture.onerror = function () {
-                        this.onerror = null;
-                        this.src = 'images/photo-1496181133206-80ce9b88a853.jpg';
-                        this.alt = 'Example photo: product image is unavailable';
-                    };
-                    picture.src = typeof product.thumbnail === 'string' && product.thumbnail.startsWith('https://') ? product.thumbnail : 'images/photo-1496181133206-80ce9b88a853.jpg';
-                    apiGrid.appendChild(card);
-                }
+                showApiProducts(data.products);
                 apiStatus.textContent = data.products.length ? 'Products loaded: ' + data.products.length : 'No products in this category.';
             } catch (error) {
                 apiGrid.replaceChildren();

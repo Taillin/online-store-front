@@ -123,9 +123,12 @@ $(function () {
                 var parsed = JSON.parse(saved);
                 if (!Array.isArray(parsed)) throw new Error('Invalid list');
                 for (var i = 0; i < parsed.length; i++) {
-                    if (!parsed[i] || typeof parsed[i].name !== 'string' || typeof parsed[i].category !== 'string' || !Number.isInteger(parsed[i].price) || parsed[i].price < 1) throw new Error('Invalid product');
-                }
-                for (var i = 0; i < parsed.length; i++) {
+                    var product = parsed[i];
+                    if (!product) throw new Error('Missing product');
+                    var hasName = typeof product.name === 'string';
+                    var hasCategory = typeof product.category === 'string';
+                    var hasPrice = Number.isInteger(product.price) && product.price > 0;
+                    if (!hasName || !hasCategory || !hasPrice) throw new Error('Invalid product');
                     if (typeof oldCategories[parsed[i].category] === 'string') {
                         parsed[i].category = oldCategories[parsed[i].category];
                     }
