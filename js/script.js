@@ -1,3 +1,4 @@
+
 $(function () {
     function markField(selector, valid) {
         $(selector).toggleClass('is-valid', valid).toggleClass('is-invalid', !valid);
@@ -102,7 +103,7 @@ $(function () {
 
     if ($('#productRows').length) {
         var products = [
-            { name: 'ASUS Vivobook S14', category: 'Laptops', price: 419990 },
+            { name: 'ASUS Vivobook S14', category: 'Laptops', price: 419900 },
             { name: 'ASUS Zenbook 14 OLED', category: 'Laptops', price: 549990 },
             { name: 'GeForce RTX 4060 8GB', category: 'Graphics cards', price: 189990 },
             { name: 'AMD Ryzen 5 5600', category: 'Processors', price: 59990 }

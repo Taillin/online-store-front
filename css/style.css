@@ -608,8 +608,6 @@ a:hover, a:focus {
         gap: 0.75rem;
     }
 }
-
-/* Final: shared theme and small additions to the existing layout. */
 [data-bs-theme="dark"] {
     --color-primary: #efadc0;
     --color-primary-dark: #f5c9d5;
@@ -721,8 +719,6 @@ section[id], form[id] { scroll-margin-top: 160px; }
 .faq-indicator { font-size: 1.4rem; color: var(--color-primary); }
 .faq-answer { display: none; padding: 0 1.25rem 1.25rem; color: var(--color-text-muted); }
 .faq-answer p { margin: 0; }
-.ai-credit { font-size: 0.85rem; color: #c3bdc0; padding-bottom: 1rem; }
-.ai-credit a { color: #edb5c4; }
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
 @media (max-width: 991px) {

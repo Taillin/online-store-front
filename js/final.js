@@ -1,4 +1,3 @@
-// Final Project: theme, local profile, FAQ and public product API.
 document.addEventListener('DOMContentLoaded', function () {
     function validName(value) {
         if (typeof value !== 'string') return false;
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     updateThemeButton();
 
-    // This is a browser-only demo profile, not server authentication.
     var user = null;
     var accountLink = document.getElementById('accountLink');
     var signOutButton = document.getElementById('signOut');
@@ -46,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             user = savedUser;
         }
     } catch (error) {
-        // Invalid or unavailable storage is treated as a signed-out state.
+
     }
 
     function updateProfile() {
@@ -107,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     updateProfile();
 
-    // Each FAQ button opens its own answer with a jQuery animation.
     $('.faq-question').on('click', function () {
         var button = $(this);
         var answer = $('#' + button.attr('aria-controls'));
@@ -125,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var apiGrid = document.getElementById('apiProducts');
         var apiTemplate = document.getElementById('apiProductTemplate');
 
-        // Build cards from the received product list.
         function showApiProducts(products) {
         for (var i = 0; i < products.length; i++) {
             var product = products[i];
@@ -148,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         }
 
-        // Fetch data, then pass it to the card function.
         async function loadApiProducts() {
             apiCategory.disabled = true;
             refreshButton.disabled = true;
