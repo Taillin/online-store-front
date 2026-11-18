@@ -207,7 +207,7 @@ a:hover, a:focus {
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
 .product-badge {
@@ -249,7 +249,7 @@ a:hover, a:focus {
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 .product-info {
