@@ -20,3 +20,4 @@ Yermakov Ilya, Khametov Ilyas and Askar Azamat.
 
 The layout works on phones, tablets and computers. This is a demo: there are no real orders, payments or accounts. Passwords are not stored.
 
+[Final_Project_Report_EN (1).pdf](https://github.com/user-attachments/files/35032911/Final_Project_Report_EN.1.pdf)
