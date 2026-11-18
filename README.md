@@ -1,4 +1,4 @@
-# IAIDev
+# IAIDevelopment
 
 Website for browsing and comparing laptops and PC parts.
 Built with HTML, CSS, Bootstrap, JavaScript and jQuery.
